@@ -1,0 +1,32 @@
+ul.breadcrumb {
+
+    list-style: none;
+    color: #999;
+    overflow: hidden;
+    font-size: 12px;
+
+    li {
+        display: block;
+        float: left;
+        padding: 5px 6px 5px 0;
+
+        .divider {
+            padding-left: 3px;
+        }
+
+        a {
+            color: #999;
+            text-decoration: none;
+
+            &:hover {
+                color: #333;
+            }
+        }
+
+        &.active {
+            color: @baseTextColor;
+            font-weight: 400;
+        }
+
+    }
+}

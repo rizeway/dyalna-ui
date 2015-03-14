@@ -1,0 +1,14 @@
+{
+  "name": "dyalna-ui",
+  "version": "1.0.0",
+  "authors": [
+    "Riad Benguella <riad@rizeway.com>"
+  ],
+  "description": "UI Framework for Dyalna Websites",
+  "keywords": [
+    "UI",
+    "less"
+  ],
+  "license": "MIT",
+  "homepage": "http://dyalna.com"
+}

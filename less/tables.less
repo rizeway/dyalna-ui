@@ -1,0 +1,269 @@
+//
+// Tables
+// --------------------------------------------------
+
+@tableBackground:                   transparent; // overall background-color
+@tableBackgroundAccent:             #f9f9f9; // for striping
+@tableBackgroundHover:              #f5f5f5; // for hover
+@tableBorder:                       #ddd; // table and cell border
+
+
+// BASE TABLES
+// -----------------
+
+table {
+    max-width: 100%;
+    background-color: @tableBackground;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+// BASELINE STYLES
+// ---------------
+
+.table {
+    width: 100%;
+// Cells
+    th,
+    td {
+        padding: 8px;
+        line-height: @baseLineHeight;
+        text-align: left;
+        vertical-align: top;
+        border-top: 1px solid @tableBorder;
+    }
+
+
+
+    td.actions, th.actions {
+        i {
+            font-size: 16px;
+            margin-right: 10px;
+        }
+
+        a:hover {
+            text-decoration: none;
+
+            i {
+                color: #000;
+            }
+        }
+    }
+
+    th {
+        font-weight: bold;
+    }
+// Bottom align for column headings
+    thead th {
+        vertical-align: bottom;
+    }
+// Remove top border from thead by default
+    caption + thead tr:first-child th,
+    caption + thead tr:first-child td,
+    colgroup + thead tr:first-child th,
+    colgroup + thead tr:first-child td,
+    thead:first-child tr:first-child th,
+    thead:first-child tr:first-child td {
+        border-top: 0;
+    }
+// Account for multiple tbody instances
+    tbody + tbody {
+        border-top: 2px solid @tableBorder;
+    }
+
+// Nesting
+    .table {
+        background-color: #FFF;
+    }
+
+    td.selected-50, th.selected-50 {
+        background-color: lighten(#333, 60%);
+    }
+
+    td.selected-60, th.selected-60 {
+        background-color: lighten(#333, 65%);
+    }
+
+    td.selected-70, th.selected-70 {
+        background-color: lighten(#333, 70%);
+    }
+
+    td.selected-80, th.selected-80 {
+        background-color: lighten(#333, 72%);
+    }
+
+    td.selected-90, th.selected-90 {
+        background-color: lighten(#333, 75%);
+    }
+
+    .cell-header {
+        background-color: #F1F1F1;
+    }
+}
+
+
+
+// CONDENSED TABLE W/ HALF PADDING
+// -------------------------------
+
+.table-condensed {
+    th,
+    td {
+        padding: 4px 5px;
+    }
+}
+
+
+// BORDERED VERSION
+// ----------------
+
+.table-bordered {
+    border: 1px solid @tableBorder;
+    border-collapse: separate; // Done so we can round those corners!
+    *border-collapse: collapse; // IE7 can't round corners anyway
+    border-left: 0;
+    th,
+    td {
+        border-left: 1px solid @tableBorder;
+    }
+// Prevent a double border
+    caption + thead tr:first-child th,
+    caption + tbody tr:first-child th,
+    caption + tbody tr:first-child td,
+    colgroup + thead tr:first-child th,
+    colgroup + tbody tr:first-child th,
+    colgroup + tbody tr:first-child td,
+    thead:first-child tr:first-child th,
+    tbody:first-child tr:first-child th,
+    tbody:first-child tr:first-child td {
+        border-top: 0;
+    }
+
+}
+
+
+
+
+// ZEBRA-STRIPING
+// --------------
+
+// Default zebra-stripe styles (alternating gray and transparent backgrounds)
+.table-striped {
+    tbody {
+        > tr:nth-child(odd) > td,
+        > tr:nth-child(odd) > th {
+            background-color: @tableBackgroundAccent;
+        }
+    }
+}
+
+
+// HOVER EFFECT
+// ------------
+// Placed here since it has to come after the potential zebra striping
+.table-hover {
+    tbody {
+        tr:hover > td,
+        tr:hover > th {
+            background-color: @tableBackgroundHover;
+        }
+    }
+}
+
+
+// TABLE CELL SIZING
+// -----------------
+
+// Reset default grid behavior
+table td[class*="span"],
+table th[class*="span"],
+.row-fluid table td[class*="span"],
+.row-fluid table th[class*="span"] {
+    display: table-cell;
+    float: none; // undo default grid column styles
+    margin-left: 0; // undo default grid column styles
+}
+
+// TABLE BACKGROUNDS
+// -----------------
+// Exact selectors below required to override .table-striped
+
+.table tbody tr {
+    &.success > td, td.success {
+        background-color: @successBackground;
+    }
+    &.error > td, td.error {
+        background-color: @errorBackground;
+    }
+    &.warning > td, td.warning {
+        background-color: @warningBackground;
+    }
+    &.info > td, td.info {
+        background-color: @infoBackground;
+    }
+}
+
+// Hover states for .table-hover
+.table-hover tbody tr {
+    &.success:hover > td, td.success:hover {
+        background-color: darken(@successBackground, 5%);
+    }
+    &.error:hover > td, td.error:hover {
+        background-color: darken(@errorBackground, 5%);
+    }
+    &.warning:hover > td, td.warning:hover {
+        background-color: darken(@warningBackground, 5%);
+    }
+    &.info:hover > td, td.info:hover {
+        background-color: darken(@infoBackground, 5%);
+    }
+}
+
+
+.tableColored(@color, @text-color-header) {
+    thead th {
+        background-color: @color;
+        color: @text-color-header;
+        border: 0
+    }
+
+    td.colored-5, th.colored-5 {
+        background-color: lighten(@color, 5%);
+    }
+
+    td.colored-10, th.colored-10 {
+        background-color: lighten(@color, 10%);
+    }
+
+    td.colored-20, th.colored-20 {
+        background-color: lighten(@color, 20%);
+    }
+
+    td.colored-30, th.colored-30 {
+        background-color: lighten(@color, 30%);
+    }
+
+    td.colored-40, th.colored-40 {
+        background-color: lighten(@color, 40%);
+    }
+
+    td.colored-50, th.colored-50 {
+        background-color: lighten(@color, 60%);
+    }
+
+    td.colored-60, th.colored-60 {
+        background-color: lighten(@color, 65%);
+    }
+
+    td.colored-70, th.colored-70 {
+        background-color: lighten(@color, 70%);
+    }
+
+    td.colored-80, th.colored-80 {
+        background-color: lighten(@color, 72%);
+    }
+
+    td.colored-90, th.colored-90 {
+        background-color: lighten(@color, 75%);
+    }
+}

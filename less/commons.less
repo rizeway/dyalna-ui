@@ -1,0 +1,130 @@
+body {
+    font-family: @baseFontFamily;
+    font-size: @baseFontSize;
+    color: @baseTextColor;
+    line-height: @baseLineHeight;
+    font-weight: @baseFontWeight;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+strong {
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 21px;
+    color: #939393;
+    font-weight: 400;
+    line-height: 32px;
+    padding: 0;
+    margin: 0;
+}
+
+h2 {
+    font-size: 16px;
+    line-height: 32px;
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+}
+
+h3 {
+    font-size: 14px;
+    line-height: 32px;
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+}
+
+ul {
+    list-style: square;
+    list-style-position: inside;
+    margin: 0;
+    padding: 0;
+    li {
+        line-height: 25px;
+        text-align: justify;
+    }
+}
+
+p {
+    margin-bottom: 10px;
+    line-height: 25px;
+    text-align: justify;
+}
+
+.center {
+    width: 1000px;
+    margin: auto;
+    text-align: left;
+    position: relative;
+}
+
+
+.separator-top {
+    margin-top: 20px;
+}
+
+.separator-top-small {
+    margin-top: 10px;
+}
+
+.separator-bottom {
+    margin-bottom: 20px;
+}
+
+.spacer-bottom {
+    margin-bottom: 10px;
+}
+
+.colored {
+    color: #008a9b;
+}
+
+.clear {
+    .clearfix;
+}
+
+.align-left {
+    text-align: left;
+}
+
+.align-right {
+    text-align: right;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.close {
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: @baseLineHeight;
+    color: #000;
+    text-shadow: 0 1px 0 rgba(255,255,255,1);
+    .opacity(20);
+    font-size: 12px;
+    &:hover,
+    &:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+        .opacity(40);
+    }
+}
+
+button.close {
+    padding: 0;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    -webkit-appearance: none;
+}

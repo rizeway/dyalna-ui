@@ -1,0 +1,33 @@
+.menu-left {
+    background-color: #f5f5f5;
+    list-style: none;
+    padding: 15px 20px;
+
+    li a {
+        color: @baseTextColor;
+        display: block;
+        margin-bottom: 10px;
+        .opacity(60);
+
+        [class^="icon-"], [class*=" icon-"] {
+            font-size: 16px;
+            display: inline-block;
+            margin-right: 15px;
+        }
+    }
+
+    li a:hover, li.active a {
+        .opacity(100);
+    }
+
+    li:last-child a {
+        margin-bottom: 0;
+    }
+
+    &.main {
+        border: 1px solid #ddd;
+        border-top: 0;
+        margin-top: -11px;
+        z-index: 900;
+    }
+}

@@ -1,0 +1,65 @@
+.theme-colored(@color1, @color2, @color3) {
+
+    // Links
+    a {
+        color: @color1;
+    }
+
+    // Buttons
+    .btn-one, a.btn-one {
+        .buttonColored(@color1, @color1 - #444, white);
+    }
+
+    .btn-two, a.btn-two {
+        .buttonColored(@color2, @color2 - #444, white);
+    }
+
+    .btn-three, a.btn-three {
+        .buttonColored(@color3, @color3 - #444, white);
+    }
+
+    // forms
+    textarea:focus, .textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="number"]:focus, select:focus {
+        border: 2px solid @color1;
+    }
+
+    // Modals
+    .modal-one {
+        .modalColored(@color1);
+    }
+
+    .modal-two {
+        .modalColored(@color2);
+    }
+
+    .modal-three {
+        .modalColored(@color3);
+    }
+
+    // Dropdowns
+    .dropdown-one {
+        .dropdownColored(@color1);
+    }
+
+    .dropdown-two {
+        .dropdownColored(@color2);
+    }
+
+    .dropdown-three {
+        .dropdownColored(@color3);
+    }
+
+    // tables
+    .table-one {
+        .tableColored(@color1, #fff);
+    }
+
+    .table-two {
+        .tableColored(@color2, #fff);
+    }
+
+    .table-three {
+        .tableColored(@color3, #fff);
+    }
+
+}
