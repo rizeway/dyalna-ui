@@ -65,7 +65,7 @@
     #dyalna-menu {
         float: right;
         position: relative;
-        
+
         a.dropdown-toggle {
             display: inline-block;
             width: 20px;
@@ -82,12 +82,12 @@
                 background: #CCCCCC;
             }
         }
-            
+
         .dropdown-menu {
             position: absolute;
             width: 124px;
             min-width: 124px;
-            
+
             a.menu-item {
                 width: 50px;
                 display: block;
@@ -105,12 +105,12 @@
                 &:hover {
                     background: #eeeeee;
                 }
-                
+
                 i {
                     width: 50px;
                     font-size: 25px;
                 }
-                
+
                 span {
                     width: 50px;
                 }
@@ -121,6 +121,14 @@
     #user-menu {
         float: right;
         margin-left: 20px;
+
+        .user-avatar {
+            display: inline-block;
+            margin-left: 10px;
+            .border-radius(15px);
+            border: 1px solid @themeColorThree;
+            vertical-align: middle;
+        }
     }
 
 }
